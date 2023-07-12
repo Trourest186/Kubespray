@@ -37,7 +37,7 @@
     $ 192.168.10.12 worker.gp
     ```
 ## Setup Kubesray on Ansible node
-# Install Python
+### Install Python
 ```
 $ sudo yum update
 $ sudo dnf groupinstall 'development tools'
@@ -56,14 +56,14 @@ $ sudo make install
 * Note
 If you have an already existing Python binary installed at /usr/bin/python or /usr/bin/python3, you should run `` sudo make altinstall `` instead
 
-# Install relate packages
+### Install relate packages
 
 ```
 $ cd kubespray
 
 $ pip3 install -r requirements.txt
 ```
-# Setup Node through CLI
+### Setup Node through CLI
 
 ```
 $ cp -rfp inventory/sample inventory/mycluster
@@ -76,11 +76,11 @@ $ CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/i
   - inventory/mycluster/group_vars/all/all.yml
   - inventory/mycluster/group_vars/k8s-cluster/k8s-cluster.yml
     
-# Install K8s Cluster Using Ansible Playbook:
+### Install K8s Cluster Using Ansible Playbook:
 ```
 $ ansible-playbook -i inventory/mycluster/hosts.yaml --become --become-user=root cluster.yml
 ```
-# The operations of adding, deleting, and resetting nodes
+## The operations of adding, deleting, and resetting nodes
 - Add Node \
   Edit hosts.yaml then
 

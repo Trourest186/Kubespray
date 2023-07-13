@@ -97,6 +97,6 @@ $ ansible-playbook -i inventory/mycluster/hosts.yaml --become --become-user=root
   $ ansible-playbook -i inventory/mycluster/hosts.yaml --user root reset.yaml
   ```
 ## Upgrade version for nodes 
-  - [Links] https://www.youtube.com/watch?v=M499ckeGZL8&list=PL34sAs7_26wNBRWM6BDhnonoA5FMERax0&index=106
+  - [Links] (https://www.youtube.com/watch?v=M499ckeGZL8&list=PL34sAs7_26wNBRWM6BDhnonoA5FMERax0&index=106)
 
   

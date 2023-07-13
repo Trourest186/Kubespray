@@ -33,8 +33,8 @@
   - Copy key to connection with nodes (using its hostname)
 
     ```
-    $ 192.168.10.11 master.gp
-    $ 192.168.10.12 worker.gp
+    $ ssh-copy-id master.gp
+    $ ssh-copy-id worker.gp
     ```
 ## Setup Kubesray on Ansible node
 ### Install Python

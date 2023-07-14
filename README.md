@@ -1,4 +1,5 @@
 # Kubespray
+Kubespray is a composition of Ansible playbooks, inventory, provisioning tools, and domain knowledge for generic OS/Kubernetes clusters configuration management tasks
 ## Cluster model
 - Ansible Node (Kubespray Node): CentOS Stream 8 (172.16.10.15)
 - 1 Master Node: CentOS 7 (172.16.10.12)

@@ -68,7 +68,7 @@ $ pip3 install -r requirements.txt
 
 ```
 $ cp -rfp inventory/sample inventory/mycluster
-$ declare -a IPS=(192.168.50.10 192.168.50.20 192.168.50.30)
+$ declare -a IPS=(172.16.10.12 172.16.10.13 172.16.10.14)
 $ CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 ```
 * Note: You should review the following files and edit it if needed

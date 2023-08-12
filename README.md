@@ -8,34 +8,34 @@ Kubespray is a composition of Ansible playbooks, inventory, provisioning tools, 
 - Turn off swap
   
   ```
-  $ sed -i '/swap/d' /etc/fstab
-  $ swapoff -a
+  sed -i '/swap/d' /etc/fstab
+  swapoff -a
   ```
 - Disable SELinux
   ```
-  $ setenforce 0
-  $ sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+  setenforce 0
+  sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
   ```
 - Turn off firewalld service
   ```
-  $ systemctl stop firewalld
-  $ systemctl disable firewalld
+  systemctl stop firewalld
+  systemctl disable firewalld
   ```
 - Configurating for ip_forward
   ```
-  $ sysctl -w net.ipv4.ip_forward=1
+  sysctl -w net.ipv4.ip_forward=1
   ```
 - Generate SSH key and configure SSH connectionư
   - Generating key (using on Ansible Node)
 
     ```
-    $ ssh-keygen
+    ssh-keygen
     ```
   - Copy key to connection with nodes (using its hostname)
 
     ```
-    $ ssh-copy-id master.gp
-    $ ssh-copy-id worker.gp
+    ssh-copy-id master.gp
+    ssh-copy-id worker.gp
     ```
 ## Setup Kubesray on Ansible node
 ### Install Python
@@ -67,9 +67,9 @@ $ pip3 install -r requirements.txt
 ### Setup Node through CLI
 
 ```
-$ cp -rfp inventory/sample inventory/mycluster
-$ declare -a IPS=(172.16.10.12 172.16.10.13 172.16.10.14)
-$ CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
+cp -rfp inventory/sample inventory/mycluster
+declare -a IPS=(172.16.10.12 172.16.10.13 172.16.10.14)
+CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 ```
 * Note: You should review the following files and edit it if needed
   
@@ -79,7 +79,7 @@ $ CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/i
     
 ### Install K8s Cluster Using Ansible Playbook:
 ```
-$ ansible-playbook -i inventory/mycluster/hosts.yaml --become --become-user=root cluster.yml
+ansible-playbook -i inventory/mycluster/hosts.yaml --become --become-user=root cluster.yml
 ```
 ## The operations of adding, deleting, and resetting nodes
 - Add Node \
